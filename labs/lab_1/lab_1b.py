@@ -23,19 +23,21 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         float: The result of the operation.
     """
 
-    if operation == "add":
-        return num1 + num2
-    elif operation == "subtract":
-        return num1 - num2
-    elif operation == "multiply":
-        return num1 * num2
-    elif operation == "divide":
-        if num2 != 0:
-            return num1 / num2
+    while True:
+        if operation == "add":
+            return num1 + num2
+        elif operation == "subtract":
+            return num1 - num2
+        elif operation == "multiply":
+            return num1 * num2
+        elif operation == "divide":
+            if num2 != 0:
+                return num1 / num2
+            else:
+                raise ValueError("Cannot divide by zero.")
         else:
-            raise ValueError("Cannot divide by zero.")
-    else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+            operation = input("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        # raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
     
 def request_sanitized_number(prompt: str) -> float:
     while True:
